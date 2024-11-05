@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: hsl(226, 43%, 10%);
+    color: white;
+    font-family: Rubik, 'Courier New', Courier, monospace;
+    min-height: 100vh;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    margin: 1rem;
+}
+
+.categories {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.today-time {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.previous-time {
+    color: hsl(236, 100%, 87%);
+}
+
+.report-container {
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    background-color: hsl(235, 46%, 20%);
+    & .user-info {
+        display: flex;
+        align-items: center;
+        background-color: hsl(246, 80%, 60%);
+        padding: 1.5rem 1.5rem; 
+        border-radius: 10px;
+        gap: 1rem;
+        & img {
+            width: 75px;
+            border: 3px solid white;
+            border-radius: 100%;
+        }
+        & div {
+            & p {
+            color: hsl(236, 100%, 87%);
+            }
+            & h2 {
+                font-weight: 300;
+            }
+        }
+    }
+    & .tracking-categories {
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .btn {
+            color: hsl(235, 45%, 61%);
+            padding: 1rem;
+            text-decoration: none;
+            flex: 1;
+        }
+        .btn-clr {
+            color: white;
+        }
+    }
+}
+
+.card {
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.work-container {
+    & .icon-image {
+        background-color: hsl(15, 100%, 70%);
+    }
+}
+
+.play-container {
+    & .icon-image {
+        background-color: hsl(195, 74%, 62%);
+    }
+}
+
+.study-container {
+    & .icon-image {
+        background-color: hsl(348, 100%, 68%);
+    }
+}
+
+.exercise-container {
+    & .icon-image {
+        background-color: hsl(145, 58%, 55%);
+    }
+}
+
+.social-container {
+    & .icon-image {
+        background-color: hsl(264, 64%, 52%);
+    }
+}
+
+.self-care-container {
+    & .icon-image {
+        background-color: hsl(43, 84%, 65%);
+    }
+}
+
+.icon-image {
+        width: 100%;
+        border-radius: 15px;
+        position: absolute;
+        z-index: -1;
+        & img {
+            margin-left: 70%;
+        }
+    }
+
+.main-card {
+        padding: 1.5rem;
+        margin-top: 3rem;
+        background-color: hsl(235, 46%, 20%);
+        border-radius: 15px;
+        width: 100%;
+    }
+
+.description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.description-event {
+    margin-bottom: .5rem;
+}
+
+@media (min-width: 600px) {
+    .container {
+        min-width: 600px;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "a a"
+        "b c"
+        "d e"
+        "f g";
+    }
+
+    .description-event {
+        margin-bottom: 1rem;
+    }
+
+    .description-time {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .report-container {
+        grid-area: a
+    }
+
+    .work-container{
+        grid-area: b;
+    }
+
+    .play-container {
+        grid-area: c;
+    }
+
+    .study-container{
+        grid-area: d;
+    }
+
+    .exercise-container {
+        grid-area: e;
+    }
+
+    .social-container {
+        grid-area: f;
+    }
+    .self-care-container {
+        grid-area: g;
+    }
+}
+
+@media (min-width: 900px) {
+    .container {
+        padding: 2rem;
+        min-width: 900px;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "a b c d"
+        "a e f g";
+    }
+
+    .card, .report-container {
+        max-width: 270px;
+    }
+
+    .icon-image {
+        & img {
+            margin-left: 60%;
+        }
+    }
+
+    .today-time {
+        font-size: 3rem;
+        margin: .7rem 0;
+    }
+
+    .report-container .tracking-categories {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .report-container .user-info{
+        padding: 2rem 1rem 6rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        & img {
+            margin-bottom: 2rem;
+        }
+        & h2 {
+            font-size: 2.5rem;
+        }
+    }
+}
+

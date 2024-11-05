@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Time tracking dashboard</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  
+<div class="container">
+  <div class="report-container">
+    <div class="user-info">
+      <img src="images/image-jeremy.png" alt="">
+      <div>
+        <p> Report for </p>
+        <h2> Jeremy Robson</h2>
+      </div>
+    </div>
+    <div class="tracking-categories">
+      <a href="#" id="daily" class="btn"> Daily </a>
+      <a href="#" id="weekly" class="btn btn-clr"> Weekly </a>
+      <a href="#" id="monthly" class="btn"> Monthly </a>
+    </div>
+  </div>
+
+  <div class="work-container card">
+    <div class="icon-image">
+      <img src="images/icon-work.svg" alt="">
+    </div>
+    <div class="main-card"> 
+      <div class="description-event description">
+        <p class="categories"> Work</p>
+        <img src="images/icon-ellipsis.svg" alt="">
+      </div>
+      <div class="description-time description">
+        <p class="today-time"> 32hrs</p>
+        <p class="previous-time"> Last Week - 36hrs</p>
+      </div>
+    </div>
+  </div>
+
+    <div class="play-container card"> 
+      <div class="icon-image">
+        <img  src="images/icon-play.svg" alt="">
+      </div>
+      <div class="main-card"> 
+        <div class="description-event description">
+          <p class="categories"> Play  </p>
+          <img src="images/icon-ellipsis.svg" alt="">
+        </div>
+        <div class="description-time description">
+          <p class="today-time"> 10hrs</p>
+          <p class="previous-time"> Last Week - 8hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="study-container card">
+      <div class="icon-image">
+        <img  src="images/icon-study.svg" alt="">
+      </div>
+      <div class="main-card"> 
+        <div class="description-event description">
+          <p class="categories"> Study </p>
+          <img src="images/icon-ellipsis.svg" alt="">
+        </div>
+        <div class="description-time description">
+          <p class="today-time"> 4hrs</p>
+          <p class="previous-time"> Last Week - 7hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise-container card">
+      <div class="icon-image">
+        <img  src="images/icon-exercise.svg" alt="">
+      </div>
+      <div class="main-card"> 
+        <div class="description-event description">
+          <p class="categories"> Exercise </p>
+          <img src="images/icon-ellipsis.svg" alt="">
+        </div>
+        <div class="description-time description">
+          <p class="today-time"> 4hrs</p>
+          <p class="previous-time"> Last Week - 5hrs</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="social-container card">
+      <div class="icon-image">
+        <img  src="images/icon-social.svg" alt="">
+      </div>
+      <div class="main-card"> 
+        <div class="description-event description">
+          <p class="categories"> Social  </p>
+          <img src="images/icon-ellipsis.svg" alt="">
+        </div>
+        <div class="description-time description">
+          <p class="today-time"> 5hrs</p>
+          <p class="previous-time"> Last Week - 10hrs</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="self-care-container card">
+      <div class="icon-image">
+        <img  src="images/icon-self-care.svg" alt="">
+      </div>
+      <div class="main-card"> 
+        <div class="description-event description">
+          <p class="categories"> Self Care </p>
+          <img src="images/icon-ellipsis.svg" alt="">
+        </div>
+        <div class="description-time description">
+          <p class="today-time"> 2hrs</p>
+          <p class="previous-time"> Last Week - 2hrs</p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"> </script>
+</div> 
+
+</body>
+</html>
