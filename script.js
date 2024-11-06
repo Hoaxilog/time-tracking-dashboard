@@ -15,35 +15,36 @@ btn.forEach((button) => {
     })
 })
 
-getTitle().then((dataTitle) => {
+getData().then((dataTitle) => {
     dataTitle.forEach((element, index) => {
-        title[index].textContent = element
+        title[index].textContent = element.title
     })
 })
 
-daily.addEventListener("click", async () => {
-    let daily = await getDaily()
-    daily.forEach((element, index) => {
-        today_time[index].textContent = `${element.current}hrs`
-        prev_time[index].textContent = `Last Daily - ${element.previous}hrs`
+daily.addEventListener("click", () => {
+    getData().then(dailyData => {
+    dailyData.forEach((element,index) => {
+        today_time[index].textContent = `${element.timeframes.daily.current}hrs`
+        prev_time[index].textContent = `Last Week - ${element.timeframes.daily.previous}hrs`
+        });
     })
 })
 
-weekly.addEventListener("click", async () => {
-    let weekly = await getWeekly()
-    weekly.forEach((element, index) => {
-        today_time[index].textContent = `${element.current}hrs`
-        prev_time[index].textContent = `Last Weekly - ${element.previous}hrs`
-
+weekly.addEventListener("click", () => {
+    getData().then(weeklyData => {
+    weeklyData.forEach((element,index) => {
+        today_time[index].textContent = `${element.timeframes.weekly.current}hrs`
+        prev_time[index].textContent = `Last Week - ${element.timeframes.weekly.previous}hrs`
+        });
     })
 })
 
-monthly.addEventListener("click", async () => {
-    let monthly = await getMonthly()
-    monthly.forEach((element, index) => {
-        today_time[index].textContent = `${element.current}hrs`
-        prev_time[index].textContent = `Last Monthly - ${element.previous}hrs`
-        // today_time[index].textContent = `${element[]}`
+monthly.addEventListener("click", () => {
+    getData().then(monthlyData => {
+    monthlyData.forEach((element,index) => {
+        today_time[index].textContent = `${element.timeframes.monthly.current}hrs`
+        prev_time[index].textContent = `Last Week - ${element.timeframes.monthly.previous}hrs`
+        });
     })
 })
 
@@ -53,45 +54,3 @@ async function getData() {
     const data = await response.json()
     return data
 }
-
-// TIMEFRAMES = DAILY, WEEKLY, MONTHLY 
-async function getDaily() {
-    let data = await getData()
-    let dayJson = data.map(element => {
-        return element.timeframes.daily
-    })
-    return dayJson;
-}
-
-async function getWeekly() {
-    let data = await getData()
-    let weekJson = data.map(element => {
-        return element.timeframes.weekly
-    });
-    return weekJson;
-}
-
-async function getMonthly() {
-    let data = await getData()
-    let monthlyJson = data.map(element => {
-        return element.timeframes.monthly
-    });
-    return monthlyJson;
-}
-
-// ============================= 
-async function getTitle() {
-    let data = await getData()
-    let titleJson = data.map(element => {
-        return element.title
-    });
-    return titleJson
-}
-
-
-
-
-
-// daily.addEventListener("click", () => {
-    
-// })
